@@ -44,9 +44,10 @@ while True:
     last_height = new_height
 
 # === Print result ===
-for link in sorted(product_links):
-    print(link)
+# for link in sorted(product_links):
+#     print(link)
 
+print(product_links)
 print(len(product_links))
 
 driver.quit()
