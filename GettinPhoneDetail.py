@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 from GettingData import product_links
-# product_links = {'https://divar.ir/v/iphone-11-pro-max-256-%D8%A7%DB%8C%D9%81%D9%88%D9%86-%DB%B1%DB%B1-%D9%BE%D8%B1%D9%88%D9%85%DA%A9%D8%B3-%DB%B2%DB%B5%DB%B6/AawMpiiK', 'https://divar.ir/v/12-pro-max/wZzSxUvR'}
 
+
+# Collecting detaile and information about each iPhone product from the links collected in GettingData.py
 data = []
 for link in product_links:
     link_get = requests.get(link)
