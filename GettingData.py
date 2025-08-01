@@ -19,7 +19,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 driver.get("https://divar.ir/s/tehran/mobile-phones?q=ایفون")
 
 # === Collect product links where class = 'kt-post-card__action' ===
-product_links = set()
+product_links = []
 last_height = driver.execute_script("return document.body.scrollHeight")
 LOAD_MORE_BUTTON_XPATH = '//*[@id="post-list-container-id"]/div[2]/div/button'
 while True:
@@ -27,7 +27,7 @@ while True:
     for link in links:
         href = link.get_attribute('href')
         if href:
-            product_links.add(href)
+            product_links.append(href)
 
     # Scroll down to load more untinl 20 load more buttons are clicked
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
